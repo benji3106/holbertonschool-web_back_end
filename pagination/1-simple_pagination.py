@@ -23,6 +23,7 @@ class Server:
                 reader = csv.reader(f)
                 dataset = [row for row in reader]
             self.__dataset = dataset[1:]
+
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
@@ -39,6 +40,5 @@ class Server:
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
-        start, end = index_range(page, page_size)
-        data = self.dataset()
-        return data[start:end]
+        start_index, end_index = index_range(page, page_size)
+        return self.dataset()[start_index:end_index]
