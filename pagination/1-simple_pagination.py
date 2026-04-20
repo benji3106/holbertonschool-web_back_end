@@ -1,26 +1,10 @@
 #!/usr/bin/env python3
+"""Simple pagination module"""
 
-"""
-Simple pagination module
-"""
 
 import csv
-
 from typing import List, Tuple
-
-
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """
-    Return the start and end indexes for a pagination page.
-
-    Args:
-        page (int): The page number (1-indexed).
-        page_size (int): The number of items per page.
-
-    Returns:
-        Tuple[int, int]: A tuple containing start and end indexes.
-    """
-    return (page - 1) * page_size, page * page_size
+index_range = __import__('0-simple_helper_function').index_range
 
 
 class Server:
