@@ -29,13 +29,6 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         Return a page of the dataset based on pagination parameters.
-
-        Args:
-            page (int): The page number (1-indexed, default 1).
-            page_size (int): The number of items per page (default 10).
-
-        Returns:
-            List[List]: A list of rows for the requested page, or empty list if out of range.
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
